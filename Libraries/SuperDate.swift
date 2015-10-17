@@ -6,6 +6,11 @@
 //  Copyright © 2015 Michael Chaffee. All rights reserved.
 //
 
+/*
+These extensions make NSDate work more fluent.
+Importantly, they are all pretty naive:  All work happens in currentCalendar(), etc.
+This is good enough for simple apps but care should be exercised for high-precision work.
+*/
 import Foundation
 
 //MARK: - NSDate extensions
@@ -19,6 +24,15 @@ public extension NSDate {
     components.month = month
     components.day = day
     self.init(timeInterval:0, sinceDate: calendar.dateFromComponents(components)!)
+  }
+  
+  // Short string
+  func shortString() -> String {
+    return self.toString(dateStyle: .ShortStyle, timeStyle: .NoStyle)
+  }
+  
+  func toString(dateStyle dateStyle: NSDateFormatterStyle, timeStyle: NSDateFormatterStyle) -> String {
+    return NSDateFormatter.localizedStringFromDate(self, dateStyle: dateStyle, timeStyle: timeStyle)
   }
   
 }

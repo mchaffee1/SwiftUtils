@@ -10,16 +10,16 @@ import UIKit
 
 public class DatePickerPop : NSObject, UIPopoverPresentationControllerDelegate, DatePickerViewControllerDelegate {
     
-    public typealias DatePickerPopCallback = (newDate : NSDate, forTextField : UITextField)->()
+    public typealias DatePickerPopCallback = (newDate : NSDate, forTextField : DatePickerTextField)->()
     
     var datePickerVC : DatePickerPopViewController
     var popover : UIPopoverPresentationController?
-    var textField : UITextField!
+    var textField : DatePickerTextField!
     var dataChanged : DatePickerPopCallback?
     var presented = false
     var offset : CGFloat = 8.0
     
-    public init(forTextField: UITextField) {
+    public init(forTextField: DatePickerTextField) {
         
         datePickerVC = DatePickerPopViewController()
         self.textField = forTextField

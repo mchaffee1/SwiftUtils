@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		603322B41BD2AA2D0064B8BB /* SuperDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603322B31BD2AA2D0064B8BB /* SuperDate.swift */; settings = {ASSET_TAGS = (); }; };
+		603322BE1BD2B8F20064B8BB /* DatePickerTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603322BD1BD2B8F20064B8BB /* DatePickerTextField.swift */; settings = {ASSET_TAGS = (); }; };
+		603322C01BD2BAA30064B8BB /* DatePickerPopRaiser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603322BF1BD2BAA30064B8BB /* DatePickerPopRaiser.swift */; settings = {ASSET_TAGS = (); }; };
+		603322C11BD2C12C0064B8BB /* SwiftUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 6047B6531BD158C900B87B23 /* SwiftUtils.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6047B65B1BD158C900B87B23 /* SwiftUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6047B6501BD158C900B87B23 /* SwiftUtils.framework */; settings = {ASSET_TAGS = (); }; };
 		6047B6601BD158C900B87B23 /* SwiftUtilsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6047B65F1BD158C900B87B23 /* SwiftUtilsTests.swift */; };
 		6047B6701BD15AD900B87B23 /* DatePickerPop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6047B66D1BD15AD900B87B23 /* DatePickerPop.swift */; settings = {ASSET_TAGS = (); }; };
@@ -27,6 +30,8 @@
 
 /* Begin PBXFileReference section */
 		603322B31BD2AA2D0064B8BB /* SuperDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuperDate.swift; sourceTree = "<group>"; };
+		603322BD1BD2B8F20064B8BB /* DatePickerTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePickerTextField.swift; sourceTree = "<group>"; };
+		603322BF1BD2BAA30064B8BB /* DatePickerPopRaiser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePickerPopRaiser.swift; sourceTree = "<group>"; };
 		6047B6501BD158C900B87B23 /* SwiftUtils.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftUtils.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6047B6531BD158C900B87B23 /* SwiftUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftUtils.h; sourceTree = "<group>"; };
 		6047B6551BD158C900B87B23 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -117,6 +122,8 @@
 				6047B66D1BD15AD900B87B23 /* DatePickerPop.swift */,
 				6047B66E1BD15AD900B87B23 /* DatePickerPopViewController.swift */,
 				6047B66F1BD15AD900B87B23 /* DatePickerPopViewController.xib */,
+				603322BD1BD2B8F20064B8BB /* DatePickerTextField.swift */,
+				603322BF1BD2BAA30064B8BB /* DatePickerPopRaiser.swift */,
 			);
 			path = DatePickerPop;
 			sourceTree = "<group>";
@@ -128,6 +135,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				603322C11BD2C12C0064B8BB /* SwiftUtils.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -230,6 +238,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				6047B6711BD15AD900B87B23 /* DatePickerPopViewController.swift in Sources */,
+				603322C01BD2BAA30064B8BB /* DatePickerPopRaiser.swift in Sources */,
+				603322BE1BD2B8F20064B8BB /* DatePickerTextField.swift in Sources */,
 				6047B6701BD15AD900B87B23 /* DatePickerPop.swift in Sources */,
 				603322B41BD2AA2D0064B8BB /* SuperDate.swift in Sources */,
 			);
