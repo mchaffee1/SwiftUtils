@@ -29,6 +29,16 @@ public class DatePickerTextField: UITextField {
   
   private var datePickerPop: DatePickerPop!
   
+  private var startTouch = CGPoint()
+  
+  public override init(frame: CGRect) {
+    super.init(frame: frame)
+  }
+  
+  required public init?(coder aDecoder: NSCoder) {
+    super.init(coder: aDecoder)
+  }
+  
   private func renderDate() {
     var dateText = ""
     defer { text = dateText }
@@ -43,6 +53,10 @@ public class DatePickerTextField: UITextField {
       return;
     }
     
+    if datePickerPop == nil {
+      datePickerPop = DatePickerPop(forTextField: self)
+    }
+    
     let dataChangedCallback : DatePickerPop.DatePickerPopCallback = { (newDate : NSDate, forTextField : DatePickerTextField) -> () in
       
       forTextField.date = newDate
@@ -52,7 +66,31 @@ public class DatePickerTextField: UITextField {
 
   }
   
+  private func setDateFromPop(newDate: NSDate) {
+    if date != newDate {
+      date = newDate
+      if let dateDelegate = delegate as? DatePickerTextFieldDelegate {
+        dateDelegate.datePickerDateDidChange(self)
+      }
+    }
+  }
+  
   private func popFromTouch() {
-    
+    self.resignFirstResponder()
+    pop()
+  }
+  
+  override public func beginTrackingWithTouch(touch: UITouch, withEvent event: UIEvent?) -> Bool {
+    popFromTouch()
+//    startTouch = touch.locationInView(nil)
+//    NSLog("beginTrackingWithTouch: %f, %f", touch.locationInView(nil).x, touch.locationInView(nil).y)
+    return false
+  }
+  
+  override public func endTrackingWithTouch(touch: UITouch?, withEvent event: UIEvent?) {
+    if let theTouch = touch {
+      let touchedUpInside = self.frame.contains(theTouch.locationInView(nil))
+      NSLog("endTrackingWithTouch: %f, %f; %@", theTouch.locationInView(nil).x, theTouch.locationInView(nil).y, touchedUpInside)
+    }
   }
 }

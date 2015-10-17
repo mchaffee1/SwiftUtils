@@ -27,7 +27,7 @@ class DatePickerPopViewController : UIViewController {
 
     convenience init() {
 
-        self.init(nibName: "DatePickerPopViewController", bundle: nil)
+        self.init(nibName: "DatePickerPopViewController", bundle: NSBundle(identifier: "com.chaf.SwiftUtils"))
     }
 
     private func updatePickerCurrentDate() {
