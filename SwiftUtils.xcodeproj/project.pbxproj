@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6047B6541BD158C900B87B23 /* SwiftUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 6047B6531BD158C900B87B23 /* SwiftUtils.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		603322B41BD2AA2D0064B8BB /* SuperDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603322B31BD2AA2D0064B8BB /* SuperDate.swift */; settings = {ASSET_TAGS = (); }; };
 		6047B65B1BD158C900B87B23 /* SwiftUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6047B6501BD158C900B87B23 /* SwiftUtils.framework */; settings = {ASSET_TAGS = (); }; };
 		6047B6601BD158C900B87B23 /* SwiftUtilsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6047B65F1BD158C900B87B23 /* SwiftUtilsTests.swift */; };
 		6047B6701BD15AD900B87B23 /* DatePickerPop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6047B66D1BD15AD900B87B23 /* DatePickerPop.swift */; settings = {ASSET_TAGS = (); }; };
@@ -26,6 +26,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		603322B31BD2AA2D0064B8BB /* SuperDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuperDate.swift; sourceTree = "<group>"; };
 		6047B6501BD158C900B87B23 /* SwiftUtils.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftUtils.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6047B6531BD158C900B87B23 /* SwiftUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftUtils.h; sourceTree = "<group>"; };
 		6047B6551BD158C900B87B23 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -97,6 +98,7 @@
 		6047B66A1BD1598900B87B23 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				603322B31BD2AA2D0064B8BB /* SuperDate.swift */,
 			);
 			path = Libraries;
 			sourceTree = "<group>";
@@ -126,7 +128,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6047B6541BD158C900B87B23 /* SwiftUtils.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -230,6 +231,7 @@
 			files = (
 				6047B6711BD15AD900B87B23 /* DatePickerPopViewController.swift in Sources */,
 				6047B6701BD15AD900B87B23 /* DatePickerPop.swift in Sources */,
+				603322B41BD2AA2D0064B8BB /* SuperDate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -415,6 +417,7 @@
 				6047B6661BD158C900B87B23 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6047B6671BD158C900B87B23 /* Build configuration list for PBXNativeTarget "SwiftUtilsTests" */ = {
 			isa = XCConfigurationList;
@@ -423,6 +426,7 @@
 				6047B6691BD158C900B87B23 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
