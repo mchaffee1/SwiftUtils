@@ -11,6 +11,8 @@
 		603322BE1BD2B8F20064B8BB /* DatePickerTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603322BD1BD2B8F20064B8BB /* DatePickerTextField.swift */; settings = {ASSET_TAGS = (); }; };
 		603322C11BD2C12C0064B8BB /* SwiftUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 6047B6531BD158C900B87B23 /* SwiftUtils.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		603322C31BD2D2FF0064B8BB /* DatePickerTextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603322C21BD2D2FF0064B8BB /* DatePickerTextFieldDelegate.swift */; settings = {ASSET_TAGS = (); }; };
+		603322C61BD301230064B8BB /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603322C51BD301230064B8BB /* Stack.swift */; settings = {ASSET_TAGS = (); }; };
+		603322C81BD305180064B8BB /* StackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603322C71BD305180064B8BB /* StackTests.swift */; settings = {ASSET_TAGS = (); }; };
 		6047B65B1BD158C900B87B23 /* SwiftUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6047B6501BD158C900B87B23 /* SwiftUtils.framework */; settings = {ASSET_TAGS = (); }; };
 		6047B6601BD158C900B87B23 /* SwiftUtilsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6047B65F1BD158C900B87B23 /* SwiftUtilsTests.swift */; };
 		6047B6701BD15AD900B87B23 /* DatePickerPop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6047B66D1BD15AD900B87B23 /* DatePickerPop.swift */; settings = {ASSET_TAGS = (); }; };
@@ -32,6 +34,8 @@
 		603322B31BD2AA2D0064B8BB /* SuperDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuperDate.swift; sourceTree = "<group>"; };
 		603322BD1BD2B8F20064B8BB /* DatePickerTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePickerTextField.swift; sourceTree = "<group>"; };
 		603322C21BD2D2FF0064B8BB /* DatePickerTextFieldDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePickerTextFieldDelegate.swift; sourceTree = "<group>"; };
+		603322C51BD301230064B8BB /* Stack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
+		603322C71BD305180064B8BB /* StackTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StackTests.swift; sourceTree = "<group>"; };
 		6047B6501BD158C900B87B23 /* SwiftUtils.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftUtils.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6047B6531BD158C900B87B23 /* SwiftUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftUtils.h; sourceTree = "<group>"; };
 		6047B6551BD158C900B87B23 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -96,6 +100,7 @@
 			children = (
 				6047B65F1BD158C900B87B23 /* SwiftUtilsTests.swift */,
 				6047B6611BD158C900B87B23 /* Info.plist */,
+				603322C71BD305180064B8BB /* StackTests.swift */,
 			);
 			path = SwiftUtilsTests;
 			sourceTree = "<group>";
@@ -104,6 +109,7 @@
 			isa = PBXGroup;
 			children = (
 				603322B31BD2AA2D0064B8BB /* SuperDate.swift */,
+				603322C51BD301230064B8BB /* Stack.swift */,
 			);
 			path = Libraries;
 			sourceTree = "<group>";
@@ -241,6 +247,7 @@
 				6047B6711BD15AD900B87B23 /* DatePickerPopViewController.swift in Sources */,
 				603322BE1BD2B8F20064B8BB /* DatePickerTextField.swift in Sources */,
 				6047B6701BD15AD900B87B23 /* DatePickerPop.swift in Sources */,
+				603322C61BD301230064B8BB /* Stack.swift in Sources */,
 				603322B41BD2AA2D0064B8BB /* SuperDate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -249,6 +256,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				603322C81BD305180064B8BB /* StackTests.swift in Sources */,
 				6047B6601BD158C900B87B23 /* SwiftUtilsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
