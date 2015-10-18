@@ -125,10 +125,10 @@
 		6047B66C1BD15AA000B87B23 /* DatePickerPop */ = {
 			isa = PBXGroup;
 			children = (
+				603322BD1BD2B8F20064B8BB /* DatePickerTextField.swift */,
 				6047B66D1BD15AD900B87B23 /* DatePickerPop.swift */,
 				6047B66E1BD15AD900B87B23 /* DatePickerPopViewController.swift */,
 				6047B66F1BD15AD900B87B23 /* DatePickerPopViewController.xib */,
-				603322BD1BD2B8F20064B8BB /* DatePickerTextField.swift */,
 				603322C21BD2D2FF0064B8BB /* DatePickerTextFieldDelegate.swift */,
 			);
 			path = DatePickerPop;

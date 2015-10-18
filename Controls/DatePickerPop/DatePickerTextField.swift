@@ -13,7 +13,7 @@ places that picker's value in its own text with its dateStyle property's style.
 import UIKit
 
 public class DatePickerTextField: UITextField {
-
+  
   // IMPORTANT:  This outlet is how we access the view controller which should render
   // the popup.  If the viewController outlet isn't wired up to a view controller (usually this control's parent VC),
   // then the popup won't appear.
@@ -33,7 +33,7 @@ public class DatePickerTextField: UITextField {
       }
     }
   }
-
+  
   // Style in which to render the date.
   public var dateStyle: NSDateFormatterStyle = .ShortStyle {
     didSet { renderDate() }
@@ -46,12 +46,30 @@ public class DatePickerTextField: UITextField {
   
   private var startTouch = CGPoint()
   
+  private var overButton: UIButton!
+  
   public override init(frame: CGRect) {
     super.init(frame: frame)
   }
   
   required public init?(coder aDecoder: NSCoder) {
     super.init(coder: aDecoder)
+  }
+  
+  // Create a button that lies on top of the textview.  
+  // The button thus handles the touch interaction (simple touchUpInside)
+  private func initDateControl() {
+    let myFrame = self.bounds
+    overButton = UIButton(type: .System)
+    overButton.frame = CGRect(x: 0, y: 0, width: myFrame.width, height: myFrame.height)
+    overButton.addTarget(self, action: Selector("overButton_touchUpInside:"), forControlEvents:[.TouchUpInside])
+    self.addSubview(overButton)
+  }
+  
+  // Call initDateControl() at layout-time.
+  override public func layoutSubviews() {
+    super.layoutSubviews()
+    initDateControl()
   }
   
   // take the value stored in the date property, and display it in the text field.
@@ -63,7 +81,7 @@ public class DatePickerTextField: UITextField {
       dateText = date.toString(dateStyle: self.dateStyle, timeStyle: .NoStyle)
     }
   }
-
+  
   // Actually pop up a picker, then update date from picked value.
   public func pop() {
     if viewController == nil {
@@ -71,7 +89,7 @@ public class DatePickerTextField: UITextField {
     }
     
     self.resignFirstResponder()
-
+    
     if datePickerPop == nil {
       datePickerPop = DatePickerPop(forTextField: self)
     }
@@ -82,20 +100,11 @@ public class DatePickerTextField: UITextField {
     }
     
     datePickerPop.pick(viewController, initDate: self.date, dataChanged: dataChangedCallback)
-
+    
   }
   
-  override public func beginTrackingWithTouch(touch: UITouch, withEvent event: UIEvent?) -> Bool {
+  // Receiver for the touchUpInside sent from overButton.
+  func overButton_touchUpInside(sender: AnyObject) {
     pop()
-//    startTouch = touch.locationInView(nil)
-//    NSLog("beginTrackingWithTouch: %f, %f", touch.locationInView(nil).x, touch.locationInView(nil).y)
-    return false
-  }
-  
-  override public func endTrackingWithTouch(touch: UITouch?, withEvent event: UIEvent?) {
-    if let theTouch = touch {
-      let touchedUpInside = self.frame.contains(theTouch.locationInView(nil))
-      NSLog("endTrackingWithTouch: %f, %f; %@", theTouch.locationInView(nil).x, theTouch.locationInView(nil).y, touchedUpInside)
-    }
   }
 }
