@@ -6,10 +6,12 @@
 //  Copyright © 2015 Michael Chaffee. All rights reserved.
 //
 
-/*
-This custom control is a read-only UITextField which, when touched, raises a DatePickerPop and, after user entry,
-places that picker's value in its own text with its dateStyle property's style.
-*/
+/// This custom control is a read-only UITextField which, when touched, raises a DatePickerPop and, after user entry,
+/// places that picker's value in its own text with its dateStyle property's style.
+/// To use:
+/// - Wire the popupContainer outlet to the view controller which should contain the popup.
+/// - Wire the valueChanged event to the appropriate receiver AND/OR assign a delegate to receive textFieldDidEndEditing calls.
+/// - (optional) Set the dateStyle property if something other than .ShortStyle is desired.
 import UIKit
 
 public class DatePickerTextField: UITextField {
@@ -17,7 +19,7 @@ public class DatePickerTextField: UITextField {
   // IMPORTANT:  This outlet is how we access the view controller which should render
   // the popup.  If the viewController outlet isn't wired up to a view controller (usually this control's parent VC),
   // then the popup won't appear.
-  @IBOutlet weak var viewController: UIViewController!
+  @IBOutlet weak var popupContainer: UIViewController!
   
   // The date contained in the text field.
   // Any time it changes, the delegate is notified (meaning the delegate may need to filter the event from initial population).
@@ -27,9 +29,7 @@ public class DatePickerTextField: UITextField {
       if newValue != _date {
         _date = newValue
         renderDate()
-        if let dateDelegate = delegate as? DatePickerTextFieldDelegate {
-          dateDelegate.datePickerDateDidChange(self)
-        }
+        sendValueChanged()
       }
     }
   }
@@ -82,9 +82,16 @@ public class DatePickerTextField: UITextField {
     }
   }
   
+  // Send a ValueChanged event to the receiver (if assigned) 
+  // and call the delegate's didFinishEditing method (if appropriate).
+  private func sendValueChanged() {
+    sendActionsForControlEvents(.ValueChanged)
+    delegate?.textFieldDidEndEditing?(self)
+  }
+  
   // Actually pop up a picker, then update date from picked value.
   public func pop() {
-    if viewController == nil {
+    if popupContainer == nil {
       return;
     }
     
@@ -99,7 +106,7 @@ public class DatePickerTextField: UITextField {
       forTextField.date = newDate
     }
     
-    datePickerPop.pick(viewController, initDate: self.date, dataChanged: dataChangedCallback)
+    datePickerPop.pick(popupContainer, initDate: self.date, dataChanged: dataChangedCallback)
     
   }
   
