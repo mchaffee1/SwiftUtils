@@ -8,5 +8,5 @@ Contents:
 	- Stack
 		- Simple implementation of Stack datatype
 - Controls
-	- DatePickerPop control
-  	- Shameless ripoff of https://github.com/valfer/PopDatePickerApp - Thanks Valerio
+  - DatePickerPop control
+    - Shameless ripoff of https://github.com/valfer/PopDatePickerApp - Thanks Valerio
