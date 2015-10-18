@@ -19,13 +19,28 @@ public class DatePickerTextField: UITextField {
   // then the popup won't appear.
   @IBOutlet weak var viewController: UIViewController!
   
+  // The date contained in the text field.
+  // Any time it changes, the delegate is notified (meaning the delegate may need to filter the event from initial population).
   public var date: NSDate! {
-    didSet { renderDate() }
+    get { return _date }
+    set {
+      if newValue != _date {
+        _date = newValue
+        renderDate()
+        if let dateDelegate = delegate as? DatePickerTextFieldDelegate {
+          dateDelegate.datePickerDateDidChange(self)
+        }
+      }
+    }
   }
-  
+
+  // Style in which to render the date.
   public var dateStyle: NSDateFormatterStyle = .ShortStyle {
     didSet { renderDate() }
   }
+  
+  // Privately stored "real" date, mostly so initialization doesn't cause unnecessary delegate callbacks.
+  private var _date: NSDate!
   
   private var datePickerPop: DatePickerPop!
   
@@ -39,6 +54,7 @@ public class DatePickerTextField: UITextField {
     super.init(coder: aDecoder)
   }
   
+  // take the value stored in the date property, and display it in the text field.
   private func renderDate() {
     var dateText = ""
     defer { text = dateText }
@@ -47,12 +63,15 @@ public class DatePickerTextField: UITextField {
       dateText = date.toString(dateStyle: self.dateStyle, timeStyle: .NoStyle)
     }
   }
-  
+
+  // Actually pop up a picker, then update date from picked value.
   public func pop() {
     if viewController == nil {
       return;
     }
     
+    self.resignFirstResponder()
+
     if datePickerPop == nil {
       datePickerPop = DatePickerPop(forTextField: self)
     }
@@ -66,22 +85,8 @@ public class DatePickerTextField: UITextField {
 
   }
   
-  private func setDateFromPop(newDate: NSDate) {
-    if date != newDate {
-      date = newDate
-      if let dateDelegate = delegate as? DatePickerTextFieldDelegate {
-        dateDelegate.datePickerDateDidChange(self)
-      }
-    }
-  }
-  
-  private func popFromTouch() {
-    self.resignFirstResponder()
-    pop()
-  }
-  
   override public func beginTrackingWithTouch(touch: UITouch, withEvent event: UIEvent?) -> Bool {
-    popFromTouch()
+    pop()
 //    startTouch = touch.locationInView(nil)
 //    NSLog("beginTrackingWithTouch: %f, %f", touch.locationInView(nil).x, touch.locationInView(nil).y)
     return false

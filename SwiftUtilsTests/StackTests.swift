@@ -87,5 +87,19 @@ class StackTests: XCTestCase {
     let first = stack.first()
     XCTAssert(first == ints[0], String(format: "first() result %d differs from expected result %d", first ?? -42, ints[0]))
     XCTAssert(stack.count == 0, String(format: "Count after first() result %d differs from expected result 0", stack.count))
+
+  }
+  
+  func testPeek() {
+    let stack = Stack<Int>()
+    let a = stack.peek()
+    XCTAssert(a == nil, String(format: "peek() on empty stack returned %d instead of nil", a ?? -42))
+    
+    stack.push(42)
+    let b = stack.peek()
+    XCTAssert(b == 42, String(format: "peek() returned %d instead of expected value 42", b ?? -42))
+    XCTAssert(stack.count == 1, String(format: "Count after peek() returned %d instead of 1", stack.count))
   }
 }
+
+

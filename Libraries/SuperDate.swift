@@ -7,7 +7,7 @@
 //
 
 /*
-These extensions make NSDate work more fluent.
+These extensions make NSDate work more fluently.
 Importantly, they are all pretty naive:  All work happens in currentCalendar(), etc.
 This is good enough for simple apps but care should be exercised for high-precision work.
 */
@@ -31,6 +31,7 @@ public extension NSDate {
     return self.toString(dateStyle: .ShortStyle, timeStyle: .NoStyle)
   }
   
+  // Describe self in specified style
   func toString(dateStyle dateStyle: NSDateFormatterStyle, timeStyle: NSDateFormatterStyle) -> String {
     return NSDateFormatter.localizedStringFromDate(self, dateStyle: dateStyle, timeStyle: timeStyle)
   }
