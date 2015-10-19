@@ -10,9 +10,13 @@
 		603322B41BD2AA2D0064B8BB /* SuperDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603322B31BD2AA2D0064B8BB /* SuperDate.swift */; settings = {ASSET_TAGS = (); }; };
 		603322BE1BD2B8F20064B8BB /* DatePickerTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603322BD1BD2B8F20064B8BB /* DatePickerTextField.swift */; settings = {ASSET_TAGS = (); }; };
 		603322C11BD2C12C0064B8BB /* SwiftUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 6047B6531BD158C900B87B23 /* SwiftUtils.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		603322C31BD2D2FF0064B8BB /* DatePickerTextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603322C21BD2D2FF0064B8BB /* DatePickerTextFieldDelegate.swift */; settings = {ASSET_TAGS = (); }; };
 		603322C61BD301230064B8BB /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603322C51BD301230064B8BB /* Stack.swift */; settings = {ASSET_TAGS = (); }; };
 		603322C81BD305180064B8BB /* StackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603322C71BD305180064B8BB /* StackTests.swift */; settings = {ASSET_TAGS = (); }; };
+		603A1C071BD4323700ED4C33 /* PopupMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603A1C061BD4323700ED4C33 /* PopupMenuTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		603A1C091BD4327E00ED4C33 /* PopupMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603A1C081BD4327E00ED4C33 /* PopupMenuTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
+		603A1C0B1BD4345D00ED4C33 /* PopupMenuTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 603A1C0A1BD4345D00ED4C33 /* PopupMenuTableViewCell.xib */; settings = {ASSET_TAGS = (); }; };
+		603A1C0D1BD4399100ED4C33 /* PopupMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603A1C0C1BD4399100ED4C33 /* PopupMenu.swift */; settings = {ASSET_TAGS = (); }; };
+		603A1C0F1BD44EB400ED4C33 /* PopupMenuTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 603A1C0E1BD44EB400ED4C33 /* PopupMenuTableViewController.xib */; settings = {ASSET_TAGS = (); }; };
 		6047B65B1BD158C900B87B23 /* SwiftUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6047B6501BD158C900B87B23 /* SwiftUtils.framework */; settings = {ASSET_TAGS = (); }; };
 		6047B6601BD158C900B87B23 /* SwiftUtilsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6047B65F1BD158C900B87B23 /* SwiftUtilsTests.swift */; };
 		6047B6701BD15AD900B87B23 /* DatePickerPop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6047B66D1BD15AD900B87B23 /* DatePickerPop.swift */; settings = {ASSET_TAGS = (); }; };
@@ -33,9 +37,13 @@
 /* Begin PBXFileReference section */
 		603322B31BD2AA2D0064B8BB /* SuperDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuperDate.swift; sourceTree = "<group>"; };
 		603322BD1BD2B8F20064B8BB /* DatePickerTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePickerTextField.swift; sourceTree = "<group>"; };
-		603322C21BD2D2FF0064B8BB /* DatePickerTextFieldDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePickerTextFieldDelegate.swift; sourceTree = "<group>"; };
 		603322C51BD301230064B8BB /* Stack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
 		603322C71BD305180064B8BB /* StackTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StackTests.swift; sourceTree = "<group>"; };
+		603A1C061BD4323700ED4C33 /* PopupMenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupMenuTableViewController.swift; sourceTree = "<group>"; };
+		603A1C081BD4327E00ED4C33 /* PopupMenuTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupMenuTableViewCell.swift; sourceTree = "<group>"; };
+		603A1C0A1BD4345D00ED4C33 /* PopupMenuTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopupMenuTableViewCell.xib; sourceTree = "<group>"; };
+		603A1C0C1BD4399100ED4C33 /* PopupMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupMenu.swift; sourceTree = "<group>"; };
+		603A1C0E1BD44EB400ED4C33 /* PopupMenuTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopupMenuTableViewController.xib; sourceTree = "<group>"; };
 		6047B6501BD158C900B87B23 /* SwiftUtils.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftUtils.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6047B6531BD158C900B87B23 /* SwiftUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftUtils.h; sourceTree = "<group>"; };
 		6047B6551BD158C900B87B23 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -66,6 +74,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		603A1C031BD4316700ED4C33 /* PopupMenu */ = {
+			isa = PBXGroup;
+			children = (
+				603A1C061BD4323700ED4C33 /* PopupMenuTableViewController.swift */,
+				603A1C081BD4327E00ED4C33 /* PopupMenuTableViewCell.swift */,
+				603A1C0A1BD4345D00ED4C33 /* PopupMenuTableViewCell.xib */,
+				603A1C0C1BD4399100ED4C33 /* PopupMenu.swift */,
+				603A1C0E1BD44EB400ED4C33 /* PopupMenuTableViewController.xib */,
+			);
+			path = PopupMenu;
+			sourceTree = "<group>";
+		};
 		6047B6461BD158C900B87B23 = {
 			isa = PBXGroup;
 			children = (
@@ -117,6 +137,7 @@
 		6047B66B1BD1599400B87B23 /* Controls */ = {
 			isa = PBXGroup;
 			children = (
+				603A1C031BD4316700ED4C33 /* PopupMenu */,
 				6047B66C1BD15AA000B87B23 /* DatePickerPop */,
 			);
 			path = Controls;
@@ -129,7 +150,6 @@
 				6047B66D1BD15AD900B87B23 /* DatePickerPop.swift */,
 				6047B66E1BD15AD900B87B23 /* DatePickerPopViewController.swift */,
 				6047B66F1BD15AD900B87B23 /* DatePickerPopViewController.xib */,
-				603322C21BD2D2FF0064B8BB /* DatePickerTextFieldDelegate.swift */,
 			);
 			path = DatePickerPop;
 			sourceTree = "<group>";
@@ -226,6 +246,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				6047B6721BD15AD900B87B23 /* DatePickerPopViewController.xib in Resources */,
+				603A1C0F1BD44EB400ED4C33 /* PopupMenuTableViewController.xib in Resources */,
+				603A1C0B1BD4345D00ED4C33 /* PopupMenuTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -243,8 +265,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				603322C31BD2D2FF0064B8BB /* DatePickerTextFieldDelegate.swift in Sources */,
 				6047B6711BD15AD900B87B23 /* DatePickerPopViewController.swift in Sources */,
+				603A1C091BD4327E00ED4C33 /* PopupMenuTableViewCell.swift in Sources */,
+				603A1C071BD4323700ED4C33 /* PopupMenuTableViewController.swift in Sources */,
+				603A1C0D1BD4399100ED4C33 /* PopupMenu.swift in Sources */,
 				603322BE1BD2B8F20064B8BB /* DatePickerTextField.swift in Sources */,
 				6047B6701BD15AD900B87B23 /* DatePickerPop.swift in Sources */,
 				603322C61BD301230064B8BB /* Stack.swift in Sources */,

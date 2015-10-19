@@ -82,10 +82,10 @@ public class DatePickerTextField: UITextField {
     }
   }
   
-  // Send a ValueChanged event to the receiver (if assigned) 
-  // and call the delegate's didFinishEditing method (if appropriate).
+  // Send ValueChanged and EditingDidEnd events to the receiver (if assigned)
+  // and call the delegate's didFinishEditing method (if available).
   private func sendValueChanged() {
-    sendActionsForControlEvents(.ValueChanged)
+    sendActionsForControlEvents([.ValueChanged, .EditingDidEnd])
     delegate?.textFieldDidEndEditing?(self)
   }
   
