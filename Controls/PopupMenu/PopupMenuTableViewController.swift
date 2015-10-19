@@ -6,6 +6,9 @@
 //  Copyright © 2015 Michael Chaffee. All rights reserved.
 //
 
+/*
+View controller for PopupMenu class.
+*/
 import UIKit
 
 protocol PopupMenuTableViewControllerDelegate: class {
@@ -15,9 +18,8 @@ protocol PopupMenuTableViewControllerDelegate: class {
 class PopupMenuTableViewController: UITableViewController {
   var delegate: PopupMenuTableViewControllerDelegate?
   
-  var values = ["One", "Two"]
-  var selectedValue = ""
-  var suppressDidDisappear = false
+  var values = [String]()  // these are populated with the button texts in order
+  var suppressDidDisappear = false  // Used to suppress a spurious viewDidDisappear call on selection-made
   
   private let bundleIdentifier = "com.chaf.SwiftUtils"
   private let cellIdentifier = "PopupMenuTableViewCell"
@@ -25,15 +27,6 @@ class PopupMenuTableViewController: UITableViewController {
   convenience init() {
     self.init(nibName: "PopupMenuTableViewController", bundle: NSBundle(identifier: "com.chaf.SwiftUtils"))
     tableView.registerNib(UINib(nibName: cellIdentifier, bundle: NSBundle(identifier: bundleIdentifier)), forCellReuseIdentifier: cellIdentifier)
-  }
-  
-  override func viewDidLoad() {
-    super.viewDidLoad()
-  }
-  
-  override func didReceiveMemoryWarning() {
-    super.didReceiveMemoryWarning()
-    // Dispose of any resources that can be recreated.
   }
   
   // MARK: - Table view data source
@@ -50,12 +43,7 @@ class PopupMenuTableViewController: UITableViewController {
   
   override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
     let value = values[indexPath.row]
-    var cell: PopupMenuTableViewCell! = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as? PopupMenuTableViewCell
-    
-    //    if cell == nil {
-    //      tableView.registerNib(UINib(nibName: identifier, bundle: nil), forCellReuseIdentifier: identifier)
-    //      cell = tableView.dequeueReusableCellWithIdentifier(identifier) as? PopupMenuTableViewCell
-    //    }
+    let cell: PopupMenuTableViewCell! = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as? PopupMenuTableViewCell
     
     cell.value = value
     cell.viewController = self
@@ -63,12 +51,14 @@ class PopupMenuTableViewController: UITableViewController {
     return cell
   }
   
+  // Send an empty string back to the delegate to indicate cancel-with-no-selection
   override func viewDidDisappear(animated: Bool) {
     if !suppressDidDisappear {
       self.delegate?.popupMenuVCDismissed("")
     }
   }
-  
+
+  // Send back the selected value after the user touched it
   internal func cellButtonPressed(value: String) {
     // Stick our delegate in a holding tank while the dismissViewController operation takes place.
     // To avoid spurious empty callbacks.

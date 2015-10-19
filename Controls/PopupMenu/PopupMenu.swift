@@ -6,19 +6,26 @@
 //  Copyright © 2015 Michael Chaffee. All rights reserved.
 //
 
+/* 
+This class raises a popup menu with the specified button texts, and passes back the button text of the selected
+item, or else an empty string if no selection is made.
+
+To use: call class func show(forSourceView:...) or show(forBarButton:...) with a callback that processes the user
+input.
+*/
+
 import UIKit
 
 public class PopupMenu: NSObject, UIPopoverPresentationControllerDelegate, PopupMenuTableViewControllerDelegate {
   
+  // Signature of the callback that the caller should pass to the show method
   public typealias PopupMenuCallback = (selection: String)->()
-  
-  var popupMenuTableViewController: PopupMenuTableViewController
-  var popover: UIPopoverPresentationController?
-  var selectionReceived: PopupMenuCallback?
-  var presented = false
-  var offset: CGFloat = 8.0
-  var receivedSelection = ""
-  var callback: PopupMenuCallback?
+
+  private var popupMenuTableViewController: PopupMenuTableViewController
+  private var popover: UIPopoverPresentationController?
+  var presented = false  // True when the menu is showing.
+  var callback: PopupMenuCallback?  // callback passed in for completion of the menu operation.
+  let offset: CGFloat = 8.0
   
   public override init() {
     popupMenuTableViewController = PopupMenuTableViewController()
@@ -26,7 +33,7 @@ public class PopupMenu: NSObject, UIPopoverPresentationControllerDelegate, Popup
   }
   
   
-  // TODO:  Consolidate these show() operations into one method.
+  // The two public show functions are designed to be called by a consuming application.
   public class func show(forSourceView sourceView: UIView, inViewController viewController: UIViewController, withButtons buttons: String..., completion: PopupMenuCallback?) {
     PopupMenu.show(withAttachment: {(popup: PopupMenu) ->() in
       if let pop = popup.popover {
