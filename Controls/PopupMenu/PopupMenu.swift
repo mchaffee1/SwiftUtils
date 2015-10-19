@@ -10,13 +10,13 @@
 This class raises a popup menu with the specified button texts, and passes back the button text of the selected
 item, or else an empty string if no selection is made.
 
-To use: call class func show(forSourceView:...) or show(forBarButton:...) with a callback that processes the user
+To use: just call class func show(forSourceView:...) or show(forBarButton:...) with a callback that processes the user
 input.
 */
 
 import UIKit
 
-public class PopupMenu: NSObject, UIPopoverPresentationControllerDelegate, PopupMenuTableViewControllerDelegate {
+public class PopupMenu: NSObject {
   
   // Signature of the callback that the caller should pass to the show method
   public typealias PopupMenuCallback = (selection: String)->()
@@ -72,11 +72,17 @@ public class PopupMenu: NSObject, UIPopoverPresentationControllerDelegate, Popup
       popup.presented = true
     }
   }
-  
+}
+
+// MARK: - UIPopoverPresentationControllerDelegate
+extension PopupMenu: UIPopoverPresentationControllerDelegate {
   public func adaptivePresentationStyleForPresentationController(controller: UIPresentationController) -> UIModalPresentationStyle {
     return .None
   }
-  
+}
+
+// MARK: - PopupMenuTableViewControllerDelegate conformance
+extension PopupMenu: PopupMenuTableViewControllerDelegate {
   func popupMenuVCDismissed(selection: String) {
     callback?(selection: selection)
     presented = false
