@@ -29,7 +29,7 @@ class StackTests: XCTestCase {
   
   func testPushPop() {
     let stack = Stack<Int>()
-    for var i in ints {
+    for i in ints {
       stack.push(i)
     }
     
@@ -45,7 +45,7 @@ class StackTests: XCTestCase {
   // This looks just like testPushPop() except we're trying to throw in a bunch of nils and making sure we get the same results as without.
   func testNilRejection() {
     let stack = Stack<Int>()
-    for var i in ints {
+    for i in ints {
       stack.push(i)
       stack.push(nil)
     }
@@ -71,7 +71,7 @@ class StackTests: XCTestCase {
     let stack = Stack<Int>()
     XCTAssert(stack.count == 0, String(format: "count after init() %d differs from expected value 0", stack.count))
     
-    for var i in ints {
+    for i in ints {
       stack.push(i)
     }
     
@@ -80,7 +80,7 @@ class StackTests: XCTestCase {
   
   func testFirst() {
     let stack = Stack<Int>()
-    for var i in ints {
+    for i in ints {
       stack.push(i)
     }
     

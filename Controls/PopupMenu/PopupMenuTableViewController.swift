@@ -11,19 +11,24 @@ View controller for PopupMenu class.
 */
 import UIKit
 
+// TODO:  Clean up all the code
+
 protocol PopupMenuTableViewControllerDelegate: class {
   func popupMenuVCDismissed(selection: String)
 }
 
 class PopupMenuTableViewController: UITableViewController {
+  // MARK: - Internal Properties
+  var font = UIFont.preferredFontForTextStyle(UIFontTextStyleBody)
   var delegate: PopupMenuTableViewControllerDelegate?
-  
   var values = [String]()  // these are populated with the button texts in order
   var suppressDidDisappear = false  // Used to suppress a spurious viewDidDisappear call on selection-made
   
+  // MARK: - Private Properties
   private let bundleIdentifier = "com.chaf.SwiftUtils"
   private let cellIdentifier = "PopupMenuTableViewCell"
   
+  // MARK: - Initializers
   convenience init() {
     self.init(nibName: "PopupMenuTableViewController", bundle: NSBundle(identifier: "com.chaf.SwiftUtils"))
     tableView.registerNib(UINib(nibName: cellIdentifier, bundle: NSBundle(identifier: bundleIdentifier)), forCellReuseIdentifier: cellIdentifier)

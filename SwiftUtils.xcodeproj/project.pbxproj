@@ -81,11 +81,11 @@
 		603A1C031BD4316700ED4C33 /* PopupMenu */ = {
 			isa = PBXGroup;
 			children = (
+				603A1C0E1BD44EB400ED4C33 /* PopupMenuTableViewController.xib */,
+				603A1C0A1BD4345D00ED4C33 /* PopupMenuTableViewCell.xib */,
 				603A1C061BD4323700ED4C33 /* PopupMenuTableViewController.swift */,
 				603A1C081BD4327E00ED4C33 /* PopupMenuTableViewCell.swift */,
-				603A1C0A1BD4345D00ED4C33 /* PopupMenuTableViewCell.xib */,
 				603A1C0C1BD4399100ED4C33 /* PopupMenu.swift */,
-				603A1C0E1BD44EB400ED4C33 /* PopupMenuTableViewController.xib */,
 			);
 			path = PopupMenu;
 			sourceTree = "<group>";

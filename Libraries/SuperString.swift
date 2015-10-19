@@ -11,19 +11,19 @@ SuperString gives extensions to the String class for greater fluency.
 */
 import Foundation
 
-extension String {
+public extension String {
   // simple length property.
   // Note that this is EXPENSIVE and shouldn't be used injudiciously.
   public var length: Int { get { return self.characters.count } }
   
   // Trim leading and trailing spaces.
-  mutating func trim() {
+  public mutating func trim() {
     let space: Character = " "  // the character to trim
     self.trim(space)
   }
   
   // Trim leading and trailing characters
-  mutating func trim(trimChar: Character) {
+  public mutating func trim(trimChar: Character) {
     var start: String.Index!  // Will hold index of first non-space character, if any
     var end: String.Index!  // Will hold index of last non-space character, if any
     for index in self.characters.indices {

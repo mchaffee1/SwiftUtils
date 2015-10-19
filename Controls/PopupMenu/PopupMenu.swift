@@ -16,10 +16,14 @@ input.
 
 import UIKit
 
+// TODO:  This needs SO MUCH code cleanup.
+
 public class PopupMenu: NSObject {
   
   // Signature of the callback that the caller should pass to the show method
   public typealias PopupMenuCallback = (selection: String)->()
+  
+  public var font = UIFont.preferredFontForTextStyle(UIFontTextStyleBody)
 
   private var popupMenuTableViewController: PopupMenuTableViewController
   private var popover: UIPopoverPresentationController?
@@ -33,9 +37,13 @@ public class PopupMenu: NSObject {
   }
   
   
-  // The two public show functions are designed to be called by a consuming application.
+  // class function to do a simple show for
   public class func show(forSourceView sourceView: UIView, inViewController viewController: UIViewController, withButtons buttons: String..., completion: PopupMenuCallback?) {
-    PopupMenu.show(withAttachment: {(popup: PopupMenu) ->() in
+    PopupMenu().show(forSourceView: sourceView, inViewController: viewController, withButtons: buttons, completion: completion)
+  }
+
+  public func show(forSourceView sourceView: UIView, inViewController viewController: UIViewController, withButtons buttons: [String], completion: PopupMenuCallback?) {
+    show(withAttachment: {(popup: PopupMenu) ->() in
       if let pop = popup.popover {
         pop.sourceView = sourceView
         pop.sourceRect = CGRectMake(popup.offset, sourceView.bounds.size.height, 0, 0)
@@ -44,7 +52,11 @@ public class PopupMenu: NSObject {
   }
   
   public class func show(forBarButton barButton: UIBarButtonItem, inViewController viewController: UIViewController, withButtons buttons: String..., completion: PopupMenuCallback?) {
-    PopupMenu.show(withAttachment: {(popup: PopupMenu) ->() in
+    PopupMenu().show(forBarButton: barButton, inViewController: viewController, withButtons: buttons, completion: completion)
+  }
+
+  public func show(forBarButton barButton: UIBarButtonItem, inViewController viewController: UIViewController, withButtons buttons: [String], completion: PopupMenuCallback?) {
+    show(withAttachment: {(popup: PopupMenu) ->() in
       if let pop = popup.popover {
         pop.barButtonItem = barButton
       }
@@ -52,24 +64,37 @@ public class PopupMenu: NSObject {
   }
   
   // Private class show() to do all the shared stuff for show(forBarButton:) and show(forSourceView:)
-  private class func show(withAttachment attachment: (popup: PopupMenu)->(), inViewController: UIViewController, withButtons buttons: [String], completion: PopupMenuCallback?) {
-    let popup = PopupMenu()
+  private func show(withAttachment attachment: (popup: PopupMenu)->(), inViewController: UIViewController, withButtons buttons: [String], completion: PopupMenuCallback?) {
+    if presented { return }
     
-    if popup.presented { return }
-    
-    let controller = popup.popupMenuTableViewController
-    controller.delegate = popup
+    let controller = popupMenuTableViewController
+    controller.delegate = self
     controller.modalPresentationStyle = UIModalPresentationStyle.Popover
-    controller.preferredContentSize = CGSizeMake(500, 208)
+    controller.font = font
+//     controller.preferredContentSize = CGSizeMake(100, 80)
     controller.values = buttons
+    controller.view.setNeedsLayout()
+    controller.view.layoutIfNeeded()
+//    CGFloat width = 200.0;
+    let height = controller.tableView.rectForSection(0).height
     
-    popup.callback = completion
-    popup.popover = controller.popoverPresentationController
-    if let _popover = popup.popover {
-      attachment(popup: popup)
-      _popover.delegate = popup
+    var width: CGFloat = 0.0
+    let constraintRect = CGSizeMake(9999, 9999)
+    for button in buttons {
+      let boundingBox = button.boundingRectWithSize(constraintRect, options: NSStringDrawingOptions.UsesLineFragmentOrigin, attributes: [NSFontAttributeName: font], context: nil)
+      if boundingBox.width > width {
+        width = boundingBox.width + 5
+      }
+    }
+    
+    controller.preferredContentSize = CGSizeMake(width, height)
+    callback = completion
+    popover = controller.popoverPresentationController
+    if let _popover = popover {
+      attachment(popup: self)
+      _popover.delegate = self
       inViewController.presentViewController(controller, animated: true, completion: nil)
-      popup.presented = true
+      presented = true
     }
   }
 }
