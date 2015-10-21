@@ -21,6 +21,14 @@ class SuperStringTests: XCTestCase {
         super.tearDown()
     }
 
+  func testSubstringToIndex() {
+    let s = "1234567890"
+    
+    XCTAssert(s.substringToIndex(0) == "", String(format: "substringToIndex(0) returned '%@' instead of ''", s.substringToIndex(0)))
+    XCTAssert(s.substringToIndex(4) == "1234", String(format: "substringToIndex(4) returned '%@' instead of '1234'", s.substringToIndex(4)))
+    XCTAssert(s.substringToIndex(20) == s, String(format: "substringToIndex(20) returned '%@' instead of '%@'", s.substringToIndex(20), s))
+  }
+  
   func testLength() {
     let s0 = ""
     XCTAssert(s0.length == 0, String(format: "Length of empty string was %d; should be 0", s0.length))

@@ -85,12 +85,12 @@ public class DatePickerTextField: UITextField {
   // Send ValueChanged and EditingDidEnd events to the receiver (if assigned)
   // and call the delegate's didFinishEditing method (if available).
   private func sendValueChanged() {
-    sendActionsForControlEvents([.ValueChanged, .EditingDidEnd])
+    sendActionsForControlEvents([.ValueChanged, .EditingDidEnd, .EditingChanged])
     delegate?.textFieldDidEndEditing?(self)
   }
   
   // Actually pop up a picker, then update date from picked value.
-  public func pop() {
+  public func popUp() {
     if popupContainer == nil {
       return;
     }
@@ -112,6 +112,6 @@ public class DatePickerTextField: UITextField {
   
   // Receiver for the touchUpInside sent from overButton.
   func overButton_touchUpInside(sender: AnyObject) {
-    pop()
+    popUp()
   }
 }

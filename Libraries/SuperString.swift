@@ -16,6 +16,26 @@ public extension String {
   // Note that this is EXPENSIVE and shouldn't be used injudiciously.
   public var length: Int { get { return self.characters.count } }
   
+  
+  // Wrapper of String.substringToIndex that takes a nice simple Int
+  // and handles invalid indices sensibly.
+  public func substringToIndex(index: Int) -> String {
+    if index < 1 { return "" }
+    if index >= self.length { return self }
+    else {
+      return self.substringToIndex(self.startIndex.advancedBy(index))
+    }
+  }
+
+  // Wrapper of String.substringFromIndex that takes a nice simple Int
+  // and handles invalid indices sensibly.
+  public func substringFromIndex(index: Int) -> String {
+    if index < 1 { return self }
+    if index >= self.length { return "" }
+    
+    return self.substringFromIndex(self.startIndex.advancedBy(index))
+  }
+  
   // Trim leading and trailing spaces.
   public mutating func trim() {
     let space: Character = " "  // the character to trim
