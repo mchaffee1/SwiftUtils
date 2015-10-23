@@ -7,23 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		603322B41BD2AA2D0064B8BB /* SuperDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603322B31BD2AA2D0064B8BB /* SuperDate.swift */; settings = {ASSET_TAGS = (); }; };
-		603322BE1BD2B8F20064B8BB /* DatePickerTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603322BD1BD2B8F20064B8BB /* DatePickerTextField.swift */; settings = {ASSET_TAGS = (); }; };
+		603322B41BD2AA2D0064B8BB /* SuperDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603322B31BD2AA2D0064B8BB /* SuperDate.swift */; };
+		603322BE1BD2B8F20064B8BB /* DatePickerTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603322BD1BD2B8F20064B8BB /* DatePickerTextField.swift */; };
 		603322C11BD2C12C0064B8BB /* SwiftUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 6047B6531BD158C900B87B23 /* SwiftUtils.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		603322C61BD301230064B8BB /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603322C51BD301230064B8BB /* Stack.swift */; settings = {ASSET_TAGS = (); }; };
-		603322C81BD305180064B8BB /* StackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603322C71BD305180064B8BB /* StackTests.swift */; settings = {ASSET_TAGS = (); }; };
-		603A1C071BD4323700ED4C33 /* PopupMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603A1C061BD4323700ED4C33 /* PopupMenuTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		603A1C091BD4327E00ED4C33 /* PopupMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603A1C081BD4327E00ED4C33 /* PopupMenuTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
-		603A1C0B1BD4345D00ED4C33 /* PopupMenuTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 603A1C0A1BD4345D00ED4C33 /* PopupMenuTableViewCell.xib */; settings = {ASSET_TAGS = (); }; };
-		603A1C0D1BD4399100ED4C33 /* PopupMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603A1C0C1BD4399100ED4C33 /* PopupMenu.swift */; settings = {ASSET_TAGS = (); }; };
-		603A1C0F1BD44EB400ED4C33 /* PopupMenuTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 603A1C0E1BD44EB400ED4C33 /* PopupMenuTableViewController.xib */; settings = {ASSET_TAGS = (); }; };
-		603A1C111BD571E400ED4C33 /* SuperString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603A1C101BD571E400ED4C33 /* SuperString.swift */; settings = {ASSET_TAGS = (); }; };
-		603A1C131BD5832600ED4C33 /* SuperStringTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603A1C121BD5832600ED4C33 /* SuperStringTests.swift */; settings = {ASSET_TAGS = (); }; };
-		6047B65B1BD158C900B87B23 /* SwiftUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6047B6501BD158C900B87B23 /* SwiftUtils.framework */; settings = {ASSET_TAGS = (); }; };
+		603322C61BD301230064B8BB /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603322C51BD301230064B8BB /* Stack.swift */; };
+		603322C81BD305180064B8BB /* StackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603322C71BD305180064B8BB /* StackTests.swift */; };
+		603A1C071BD4323700ED4C33 /* PopupMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603A1C061BD4323700ED4C33 /* PopupMenuTableViewController.swift */; };
+		603A1C091BD4327E00ED4C33 /* PopupMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603A1C081BD4327E00ED4C33 /* PopupMenuTableViewCell.swift */; };
+		603A1C0B1BD4345D00ED4C33 /* PopupMenuTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 603A1C0A1BD4345D00ED4C33 /* PopupMenuTableViewCell.xib */; };
+		603A1C0D1BD4399100ED4C33 /* PopupMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603A1C0C1BD4399100ED4C33 /* PopupMenu.swift */; };
+		603A1C0F1BD44EB400ED4C33 /* PopupMenuTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 603A1C0E1BD44EB400ED4C33 /* PopupMenuTableViewController.xib */; };
+		603A1C111BD571E400ED4C33 /* SuperString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603A1C101BD571E400ED4C33 /* SuperString.swift */; };
+		603A1C131BD5832600ED4C33 /* SuperStringTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603A1C121BD5832600ED4C33 /* SuperStringTests.swift */; };
+		6047B65B1BD158C900B87B23 /* SwiftUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6047B6501BD158C900B87B23 /* SwiftUtils.framework */; };
 		6047B6601BD158C900B87B23 /* SwiftUtilsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6047B65F1BD158C900B87B23 /* SwiftUtilsTests.swift */; };
-		6047B6701BD15AD900B87B23 /* DatePickerPop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6047B66D1BD15AD900B87B23 /* DatePickerPop.swift */; settings = {ASSET_TAGS = (); }; };
-		6047B6711BD15AD900B87B23 /* DatePickerPopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6047B66E1BD15AD900B87B23 /* DatePickerPopViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		6047B6721BD15AD900B87B23 /* DatePickerPopViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6047B66F1BD15AD900B87B23 /* DatePickerPopViewController.xib */; settings = {ASSET_TAGS = (); }; };
+		6047B6701BD15AD900B87B23 /* DatePickerPop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6047B66D1BD15AD900B87B23 /* DatePickerPop.swift */; };
+		6047B6711BD15AD900B87B23 /* DatePickerPopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6047B66E1BD15AD900B87B23 /* DatePickerPopViewController.swift */; };
+		6047B6721BD15AD900B87B23 /* DatePickerPopViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6047B66F1BD15AD900B87B23 /* DatePickerPopViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -133,8 +133,8 @@
 		6047B66A1BD1598900B87B23 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
-				603322B31BD2AA2D0064B8BB /* SuperDate.swift */,
 				603322C51BD301230064B8BB /* Stack.swift */,
+				603322B31BD2AA2D0064B8BB /* SuperDate.swift */,
 				603A1C101BD571E400ED4C33 /* SuperString.swift */,
 			);
 			path = Libraries;

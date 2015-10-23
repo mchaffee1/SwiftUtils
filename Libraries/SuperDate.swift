@@ -36,6 +36,10 @@ public extension NSDate {
     return NSDateFormatter.localizedStringFromDate(self, dateStyle: dateStyle, timeStyle: timeStyle)
   }
   
+  func toYearMonthDay() -> NSDateComponents {
+    return NSCalendar.currentCalendar().components([.Year, .Month, .Day], fromDate: self)
+  }
+  
 }
 
 //MARK: - NSCalendar extensions
