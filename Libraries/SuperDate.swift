@@ -27,7 +27,7 @@ public extension NSDate {
   }
   
   // Short string
-  func shortString() -> String {
+  func toShortString() -> String {
     return self.toString(dateStyle: .ShortStyle, timeStyle: .NoStyle)
   }
   
@@ -43,5 +43,36 @@ public extension NSDate {
 }
 
 //MARK: - NSCalendar extensions
-extension NSCalendar {
+public extension NSCalendar {
+  // return start of first day of month
+  func startOfMonth(year year: Int, month: Int) -> NSDate {
+    return NSDate(year: year, month: month, day: 1)
+  }
+  
+  func startOfMonth(date: NSDate) -> NSDate {
+    let ymd = date.toYearMonthDay()
+    return startOfMonth(year: ymd.year, month: ymd.month)
+  }
+  
+  // return START of last day of month
+  func endOfMonth(year year: Int, month: Int) -> NSDate {
+    let comps = NSDateComponents()
+    comps.month = 1
+    comps.day = -1
+    return dateByAddingComponents(comps, toDate: startOfMonth(year: year, month: month), options: [])!
+  }
+  
+  func endOfMonth(date: NSDate) -> NSDate {
+    let ymd = date.toYearMonthDay()
+    return endOfMonth(year: ymd.year, month: ymd.month)
+  }
+  
+  // End of day for date.
+  // This returns the beginning of the last second of the day.  This is close enough for some things.
+  func endOfDayForDate(date: NSDate) -> NSDate {
+    let comps = NSDateComponents()
+    comps.day = 1
+    comps.second = -1
+    return dateByAddingComponents(comps, toDate: startOfDayForDate(date), options: [])!
+  }
 }
