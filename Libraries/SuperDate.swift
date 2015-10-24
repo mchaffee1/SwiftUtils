@@ -10,8 +10,11 @@
 These extensions make NSDate work more fluently.
 Importantly, they are all pretty naive:  All work happens in currentCalendar(), etc.
 This is good enough for simple apps but care should be exercised for high-precision work.
+
+I'm throwing a few little EventKit extensions in too...
 */
 import Foundation
+import EventKit
 
 //MARK: - NSDate extensions
 public extension NSDate {
@@ -74,5 +77,22 @@ public extension NSCalendar {
     comps.day = 1
     comps.second = -1
     return dateByAddingComponents(comps, toDate: startOfDayForDate(date), options: [])!
+  }
+}
+
+//MARK: - EKCalendarItem extensions
+public extension EKCalendarItem {
+  
+  // displayDate gets the best possible date from either an EKEvent or an EKReminder.
+  // PLEASE NOTE that this value can actually be nil for an EKReminder.
+  var displayDate: NSDate! {
+    if let event = self as? EKEvent {
+      return event.startDate
+    } else if let reminder = self as? EKReminder {
+      if let comps = reminder.startDateComponents {
+        return NSCalendar.currentCalendar().dateFromComponents(comps)
+      }
+    }
+    return nil
   }
 }
