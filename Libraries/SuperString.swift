@@ -65,4 +65,9 @@ public extension String {
     }
   }
 
+  //MARK: - objC bridging sugar
+  public func stringByAppendingPathComponent(path: String) -> String? {
+    return (self as NSString).stringByAppendingPathComponent(path)
+  }
+  
 }

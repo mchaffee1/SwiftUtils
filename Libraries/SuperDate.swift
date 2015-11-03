@@ -18,7 +18,7 @@ import EventKit
 
 //MARK: - NSDate extensions
 public extension NSDate {
-  
+
   // initialize from Y/M/D
   convenience init(year: Int, month: Int, day: Int) {
     let calendar = NSCalendar.currentCalendar()
@@ -39,25 +39,51 @@ public extension NSDate {
     return NSDateFormatter.localizedStringFromDate(self, dateStyle: dateStyle, timeStyle: timeStyle)
   }
   
+  // Return only year/month/day components of current date.
   func toYearMonthDay() -> NSDateComponents {
     return NSCalendar.currentCalendar().components([.Year, .Month, .Day], fromDate: self)
   }
   
 }
 
+// MARK: - NSDate: ISO8601 conformance
+public extension NSDate {
+  private static var iso8601formatter: NSDateFormatter {
+    let formatter = NSDateFormatter()
+    formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
+    formatter.calendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierISO8601)
+    formatter.timeZone = NSTimeZone(forSecondsFromGMT: 0)
+    formatter.locale = NSLocale(localeIdentifier: "en_US_POSIX")
+    return formatter
+  }
+  
+  // Convert self to an ISO8601 string
+  func toISO8601() -> String {
+    let formatter = NSDate.iso8601formatter
+    return formatter.stringFromDate(self)
+  }
+
+  // Initialize from an ISO8601 string
+  convenience init(fromISO8601 iso: String) {
+    let formatter = NSDate.iso8601formatter
+    self.init(timeInterval:0, sinceDate:formatter.dateFromString(iso)!)
+  }
+}
+
 //MARK: - NSCalendar extensions
 public extension NSCalendar {
-  // return start of first day of month
+  // return LOCAL start of first day of month
   func startOfMonth(year year: Int, month: Int) -> NSDate {
     return NSDate(year: year, month: month, day: 1)
   }
   
+  // return LOCAL start of first day of month
   func startOfMonth(date: NSDate) -> NSDate {
     let ymd = date.toYearMonthDay()
     return startOfMonth(year: ymd.year, month: ymd.month)
   }
   
-  // return START of last day of month
+  // return LOCAL START of last day of month
   func endOfMonth(year year: Int, month: Int) -> NSDate {
     let comps = NSDateComponents()
     comps.month = 1
@@ -65,13 +91,15 @@ public extension NSCalendar {
     return dateByAddingComponents(comps, toDate: startOfMonth(year: year, month: month), options: [])!
   }
   
+  // return LOCAL START of last day of month
   func endOfMonth(date: NSDate) -> NSDate {
     let ymd = date.toYearMonthDay()
     return endOfMonth(year: ymd.year, month: ymd.month)
   }
   
-  // End of day for date.
-  // This returns the beginning of the last second of the day.  This is close enough for some things.
+  // Return LOCAL end of day for date.
+  // IMPORTANT: This returns the beginning of the last second of the day (23:59:59.000).
+  //            Close enough for some things and not for others; make good choices.
   func endOfDayForDate(date: NSDate) -> NSDate {
     let comps = NSDateComponents()
     comps.day = 1
