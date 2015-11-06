@@ -1,3 +1,0 @@
-[submodule "Libraries/SwiftLib"]
-	path = Libraries/SwiftLib
-	url = git@github.com:mchaffee1/SwiftLib.git

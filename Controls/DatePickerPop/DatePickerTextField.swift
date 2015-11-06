@@ -78,7 +78,7 @@ public class DatePickerTextField: UITextField {
     defer { text = dateText }
     
     if date != nil {
-      dateText = date.toString(dateStyle: self.dateStyle, timeStyle: .NoStyle)
+      dateText = NSDateFormatter.localizedStringFromDate(date, dateStyle: self.dateStyle, timeStyle: .NoStyle)
     }
   }
   

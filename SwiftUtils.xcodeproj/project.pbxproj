@@ -21,9 +21,6 @@
 		6047B6701BD15AD900B87B23 /* DatePickerPop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6047B66D1BD15AD900B87B23 /* DatePickerPop.swift */; };
 		6047B6711BD15AD900B87B23 /* DatePickerPopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6047B66E1BD15AD900B87B23 /* DatePickerPopViewController.swift */; };
 		6047B6721BD15AD900B87B23 /* DatePickerPopViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6047B66F1BD15AD900B87B23 /* DatePickerPopViewController.xib */; };
-		60B290391BE930F2003A25EB /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60B290361BE930F2003A25EB /* Stack.swift */; };
-		60B2903A1BE930F2003A25EB /* SuperDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60B290371BE930F2003A25EB /* SuperDate.swift */; };
-		60B2903B1BE930F2003A25EB /* SuperString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60B290381BE930F2003A25EB /* SuperString.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,9 +51,6 @@
 		6047B66D1BD15AD900B87B23 /* DatePickerPop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePickerPop.swift; sourceTree = "<group>"; };
 		6047B66E1BD15AD900B87B23 /* DatePickerPopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePickerPopViewController.swift; sourceTree = "<group>"; };
 		6047B66F1BD15AD900B87B23 /* DatePickerPopViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DatePickerPopViewController.xib; sourceTree = "<group>"; };
-		60B290361BE930F2003A25EB /* Stack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
-		60B290371BE930F2003A25EB /* SuperDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuperDate.swift; sourceTree = "<group>"; };
-		60B290381BE930F2003A25EB /* SuperString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuperString.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,7 +88,6 @@
 			isa = PBXGroup;
 			children = (
 				6047B66B1BD1599400B87B23 /* Controls */,
-				6047B66A1BD1598900B87B23 /* Libraries */,
 				6047B6521BD158C900B87B23 /* SwiftUtils */,
 				6047B65E1BD158C900B87B23 /* SwiftUtilsTests */,
 				6047B6511BD158C900B87B23 /* Products */,
@@ -130,14 +123,6 @@
 			path = SwiftUtilsTests;
 			sourceTree = "<group>";
 		};
-		6047B66A1BD1598900B87B23 /* Libraries */ = {
-			isa = PBXGroup;
-			children = (
-				60B290351BE930D8003A25EB /* SwiftLib */,
-			);
-			path = Libraries;
-			sourceTree = "<group>";
-		};
 		6047B66B1BD1599400B87B23 /* Controls */ = {
 			isa = PBXGroup;
 			children = (
@@ -156,16 +141,6 @@
 				6047B66F1BD15AD900B87B23 /* DatePickerPopViewController.xib */,
 			);
 			path = DatePickerPop;
-			sourceTree = "<group>";
-		};
-		60B290351BE930D8003A25EB /* SwiftLib */ = {
-			isa = PBXGroup;
-			children = (
-				60B290361BE930F2003A25EB /* Stack.swift */,
-				60B290371BE930F2003A25EB /* SuperDate.swift */,
-				60B290381BE930F2003A25EB /* SuperString.swift */,
-			);
-			path = SwiftLib;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -281,13 +256,10 @@
 			files = (
 				6047B6711BD15AD900B87B23 /* DatePickerPopViewController.swift in Sources */,
 				603A1C091BD4327E00ED4C33 /* PopupMenuTableViewCell.swift in Sources */,
-				60B290391BE930F2003A25EB /* Stack.swift in Sources */,
-				60B2903B1BE930F2003A25EB /* SuperString.swift in Sources */,
 				603A1C071BD4323700ED4C33 /* PopupMenuTableViewController.swift in Sources */,
 				603A1C0D1BD4399100ED4C33 /* PopupMenu.swift in Sources */,
 				603322BE1BD2B8F20064B8BB /* DatePickerTextField.swift in Sources */,
 				6047B6701BD15AD900B87B23 /* DatePickerPop.swift in Sources */,
-				60B2903A1BE930F2003A25EB /* SuperDate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
